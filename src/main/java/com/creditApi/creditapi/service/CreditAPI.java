@@ -24,20 +24,20 @@ public class CreditAPI {
 
      @Value("${baseurl}")
     private String uri ;
-    static
-    {
+    // static
+    // {
 
-        System.setProperty("javax.net.ssl.keyStore",  "Corporate_Keystore.jks.old");
-        System.setProperty("javax.net.ssl.keyStorePassword", "nexttech");
-        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
-                new javax.net.ssl.HostnameVerifier(){
+    //     System.setProperty("javax.net.ssl.keyStore",  "Corporate_Keystore.jks.old");
+    //     System.setProperty("javax.net.ssl.keyStorePassword", "nexttech");
+    //     javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
+    //             new javax.net.ssl.HostnameVerifier(){
 
-                    public boolean verify(String hostname,
-                                          javax.net.ssl.SSLSession sslSession) {
-                        return true;
-                    }
-                });
-    }
+    //                 public boolean verify(String hostname,
+    //                                       javax.net.ssl.SSLSession sslSession) {
+    //                     return true;
+    //                 }
+    //             });
+    // }
 
     public CreditAPI() {
         restTemplate.setInterceptors(Collections.singletonList(new RequestResponseLoggingInterceptor()));
