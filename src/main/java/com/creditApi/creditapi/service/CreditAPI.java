@@ -22,8 +22,10 @@ public class CreditAPI {
 
     RestTemplate restTemplate = new RestTemplate(factory);
 
-     @Value("${baseurl}")
-    private String uri ;
+     @Value("${EBS.baseurl}")
+    private   String uri;
+     @Value("${EBS.appID}")
+     private String appId;
     // static
     // {
 
@@ -44,6 +46,7 @@ public class CreditAPI {
     }
 
     public String getEbsRsponse(String webServiceName , BaseRequest reqObject){
+        reqObject.setApplicationId(appId);
         return restTemplate.postForObject(uri+"/"+webServiceName, reqObject,String.class);
     }
 }

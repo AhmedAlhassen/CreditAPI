@@ -1,4 +1,5 @@
 package com.creditApi.creditapi.Entity;
 
-public class Echo {
+public class Echo extends BaseRequest {
+
 }
